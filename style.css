@@ -1,0 +1,1176 @@
+@font-face {
+    font-family:neu;
+    src: url(./NeueHaasDisplay-Roman.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: neu;
+
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+
+#cursor{
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: neu;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all ease 0.1s;
+    z-index: 999999999999999999999999999999999;
+}
+#page1{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#main{
+    overflow: hidden;
+}
+
+#page1 video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+/* z-index: 9; */
+
+}
+
+#dig{
+   overflow: hidden;
+}
+
+#we{
+   overflow: hidden;
+}
+
+#loader{
+   width: 100%;
+   height: 100vh;
+   background-color:black;
+   position: absolute;
+   z-index: 99;
+   top: -100%;
+   display: flex;
+   transition: all ease 0.4s;
+
+
+}
+
+.ver1{
+   width: 30%;
+   height: 100%;
+   border-right: 0.8px solid white;
+   position: relative;
+
+}
+
+#up-ver1{
+   position: absolute;
+   top: 24vh;
+   color: white;
+   left: 6vh;
+}
+
+#up-ver1 h3{
+line-height: 2;
+font-size: 1.5vw;
+font-weight: 500;
+position: relative;
+}
+
+#up-ver1 h3::after{
+position: absolute;
+content: "";
+bottom: 0%;
+left: 0%;
+width: 100%;
+height: 1px;
+background-color: white;
+transform-origin: bottom right;
+transform: scaleX(0);
+transition: transform 0.4s ease-out ;
+
+}
+
+#up-ver1 h3:hover::after{
+   transform: scaleX(1);
+   transform-origin: bottom left;
+
+}
+
+#down{
+   position: absolute;
+   bottom: 7vh;
+   left: 7vh;
+   font-size: 1.2vw;
+   font-weight: 500;
+   color: white;
+}
+
+
+#ver2 h1{
+   font-family: neu;
+font-size: 6.1vw;
+font-weight: 600;
+opacity: 0.6;
+color: white;
+}
+
+
+
+#ver2 h2{
+   color: white;
+   font-size: 6.1vw;
+font-weight: 600;
+}
+
+#ver2{
+   width: 37%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.ver3{
+   width: 33%;
+   height: 100%;
+   background-color:black;
+   position: relative;
+}
+
+#home{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   /* opacity: 0; */
+   transition: all ease 0.3s;
+
+}
+
+#contact{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   opacity: 0;
+   transition: all ease 0.3s;
+
+}
+
+#vision{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   transition: all ease 0.3s;
+
+   opacity: 0;
+}
+
+#about{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   transition: all ease 0.3s;
+
+   opacity: 0;
+}
+
+#service{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   transition: all ease 0.3s;
+
+   opacity: 0;
+}
+
+#model{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   transition: all ease 0.3s;
+
+   opacity: 0;
+}
+
+
+
+
+.ver3 video{
+   object-fit: cover;
+   height: 60vh;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+#center{
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 9999999999999999999;
+    color: white;
+
+}
+
+#center h1{
+    font-size: 8vw;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    font-family:neu;
+
+
+}
+
+#center h1 sup{
+    color: #DEFF00;
+}
+
+#center h4{
+    font-family: neu;
+    font-weight: 500;
+    font-size: 1.8vw;
+}
+
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    height: 80px;
+    z-index: 99999999999999999999999999;
+    padding: 0 40px;
+}
+
+.nav-l h4{
+    font-size: 2vw;
+    color: white;
+    font-weight: 500;
+    font-family: monument;
+}
+
+.nav-r{
+    /* display: flex; */
+    position: relative;
+
+
+}
+
+.nav-r p{
+    padding: 8px 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid white;
+font-size: 20px;
+color: white;
+position: absolute;
+right: 62px;
+top: -11px;
+font-family: neu;
+}
+
+
+#close{
+    padding: 13px 20px;
+color: white;
+font-size: 20px;
+position: absolute;
+top: -11px;
+right: -5px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid white;
+    z-index: 999999999999999;
+}
+
+.dob1{
+   width: 25px;
+   height: 2px;
+   flex-shrink: 0;
+   background-color: white;
+}
+
+.dob2{
+   width: 20px;
+   height: 2px;
+   background-color: white;
+}
+.nav-r i:hover{
+   background-color: white;
+   
+   color: black;   
+}
+
+
+
+
+
+
+
+#page2{
+    width: 100%;
+    height: 100vh;
+
+}
+
+#page2 video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+
+}
+
+#page3{
+    width: 100%;
+    height: 115vh;
+    background-color:white;
+    /* position: relative; */
+    display: flex;
+}
+
+#left-page3{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#left-page3 video {
+width: 65%;
+
+height:65% ;
+object-fit: cover;
+}
+
+#right-page3{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+#right-page3 h4{
+font-family: neu;
+font-size: 3.3vw;
+text-align: start;
+font-weight: 500;
+margin-top: 20%;
+margin-bottom: 10%;
+/* width: 75 %; */
+}
+
+
+#right-page3 h3{
+    font-family: neu;
+    font-size: 3.3vw;
+    text-align: start;
+    font-weight: 500;
+    margin-bottom: 10%;
+    }
+    
+
+#cir{
+    width: 130px;
+    height: 130px;
+border-radius: 50%;
+position: absolute;
+left: 9%;
+bottom: 5%;
+border: 1px solid lightgray;
+display: flex;
+align-items: center;
+justify-content: center;
+
+transition: all ease 0.3s;
+
+ }
+
+ #cir:hover{
+    background-color: black;
+    color: white;
+    cursor: none;
+ }
+
+ #cir:hover h5{
+    color: white;
+ } 
+ #cir h5{
+    font-size: 20px;
+    font-family: neu;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(76, 75, 75);
+ }
+
+ #page4{
+    width: 100%;
+    height: 50vh;
+    background-color:white;
+    position: relative;
+
+ }
+
+ .out{
+    white-space:nowrap;
+    position: absolute;
+    display: inline-block;
+    top: 18%;
+ }
+
+ .stripe{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: anime;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+ }
+
+ .stripe h1{
+    font-size: 6vw;
+    font-family: neu;
+    margin-left:100px;
+    display: inline-block;
+    font-weight: 500;
+
+ }
+
+ .stripe video{
+    height: 120px;
+    object-fit: cover;
+ }
+
+ @keyframes anime {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+ }
+
+ #page5{
+    width: 100%;
+    height: 140vh;
+    background-color: red;
+position: relative;
+ }
+
+ #page5 video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+ #elem1{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgb(161, 68, 68);
+
+}
+
+ #elem1 video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+ #elem2{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(97, 85, 157);
+opacity: 0;
+top: 0%;
+position: absolute;
+
+}
+
+ #elem2 video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+ #elem3{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(97, 85, 157);
+opacity: 0;
+top: 0%;
+position: absolute;
+
+}
+
+ #elem3 video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+ #elem4{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(97, 85, 157);
+opacity: 0;
+top: 0%;
+position: absolute;
+
+}
+
+ #elem4 video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+
+
+
+ #pack{
+    width: 75%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+ }
+
+ #line1{
+font-family: neu;
+    color: white;
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+ }
+
+ .ll h1{
+    font-size: 5vw;
+ }
+
+ .rr{
+    opacity: 0;
+    display: flex;
+    width: 24vw;
+    transition: all ease 0.3s;
+    justify-content: space-between;
+ }
+
+ .rr h4{
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 8px 20px;
+
+ }
+
+
+  #line2{
+font-family: neu;
+    color: white;
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+ }
+
+ .ll2 h1{
+    font-size: 5vw;
+ }
+
+ .rr2{
+    opacity: 1;
+    display: flex;
+    width: 27vw;
+    justify-content: space-between;
+ }
+
+ .rr2 h4{
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 8px 20px;
+
+ }
+
+
+  #line3{
+font-family: neu;
+    color: white;
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+ }
+
+ .ll3 h1{
+    font-size: 5vw;
+ }
+
+ .rr3{
+    opacity: 1;
+    display: flex;
+    width: 24vw;
+    justify-content: space-between;
+ }
+
+ .rr3 h4{
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 8px 20px;
+
+ }
+
+
+
+  #line4{
+font-family: neu;
+    color: white;
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+ }
+
+ .ll4 h1{
+    font-size: 5vw;
+ }
+
+ .rr4{
+    opacity: 1;
+    display: flex;
+    width: 24vw;
+    justify-content: space-between;
+ }
+
+ .rr4 h4{
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 8px 20px;
+
+ }
+
+
+ #page6{
+    width: 100%;
+    height: 100vh;
+    background-color:black;
+
+    display: flex;
+ }
+
+ #left-page6{
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+
+ }
+
+
+ #left-page6{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    position: relative;
+}
+
+
+#left-page6 h4{
+font-family: neu;
+font-size: 2.8vw;
+text-align: start;
+font-weight: 500;
+margin-top: 17%;
+margin-bottom: 10%;
+width: 75%;
+}
+
+
+#left-page6 h3{
+    font-family: neu;
+    font-size: 2.8vw;
+    text-align: start;
+    font-weight: 500;
+    margin-bottom: 10%;
+
+    width: 75%;
+
+    }
+    
+
+
+ #right-page6{
+    width: 50%;
+    height: 100%;
+    /* background-color: rgb(176, 197, 115); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+ }
+
+ #right-page6 video{
+    
+    height: 80%;
+    object-fit: cover;
+ }
+
+ #page7{
+    width: 100%;
+    height: 90vh;
+    background-color:white;
+    position: relative;
+
+ }
+
+ .stu{
+    position: absolute;
+    top: 20%;
+    white-space: nowrap;
+display: inline-block;
+
+ }
+
+ .row{
+    display: inline-block;
+    white-space: nowrap;
+
+    animation-name: sss;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+ }
+
+ .row h2{
+    font-size: 5vw;
+    font-family: neu;
+    color: black;
+    font-weight: 500;
+    margin-left: 40px;
+    display: inline-block;
+ }
+
+ @keyframes sss {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+ }
+
+
+
+ .stu2{
+    position: absolute;
+    top: 50%;
+    white-space: nowrap;
+display: inline-block;
+
+ }
+
+ .row2{
+    display: inline-block;
+    white-space: nowrap;
+
+    animation-name: sss;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+animation-direction: reverse;
+ }
+
+ .row2 h2{
+    font-size: 5vw;
+    font-family: neu;
+    color: black;
+    font-weight: 500;
+    margin-left: 40px;
+    display: inline-block;
+ }
+
+ @keyframes sss {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+ }
+
+ #page8{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+position: relative;
+
+margin-top: -3px;
+
+ }
+
+ #overlay{
+   width: 370px;
+   height: 600px;
+   position: absolute;
+   top: 53%;
+   background-color:transparent;
+z-index: 9999999999999999999999999999999999;
+   left: 50%;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   transform: translate(-50%, -50%);
+ }
+
+ .yo{
+   width: 100%;
+   height: 90px;
+   z-index: 99999;
+   /* background-color: rgb(178, 235, 219); */
+ }
+
+
+ #index{
+   width: 300px;
+   height: 600px;
+   position: absolute;
+   top: 53%;
+   
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+ #index h1{
+   text-align: center;
+color: gray;
+   font-size: 5vw;
+   margin-bottom: 33px;
+   font-family: neu;
+   font-weight: 500;
+ }
+
+ .over{
+   white-space: nowrap;
+   position: absolute;
+   top: 15%;
+      background-color:gray;
+      opacity: 0;
+      transition: all ease 0.3s;
+
+
+ }
+
+ .insta{
+   display: inline-block;
+   white-space: nowrap;
+animation-name: final;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+
+ .insta h2{
+   display: inline-block;
+   white-space: nowrap;
+   font-size: 4vw;
+   font-weight: 500;
+   font-family: neu;
+   margin-left: 25px;
+ }
+
+ .insta h2 sub{
+   color: #DEFF00;
+ }
+
+ @keyframes final {
+   0%{
+      transform: translateX(0);
+   }
+   100%{
+      transform: translateX(-100%);
+   }
+ }
+
+ .over2{
+   white-space: nowrap;
+   position: absolute;
+   top: 29%;
+      background-color:gray;
+      transition: all ease 0.3s;
+
+      opacity: 0;
+
+ }
+
+ .twit{
+   display: inline-block;
+   white-space: nowrap;
+animation-name: final;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+
+ .twit h2{
+   display: inline-block;
+   white-space: nowrap;
+   font-size: 4vw;
+   font-family: neu;
+   margin-left: 25px;
+   font-weight: 500;
+
+ }
+
+ .twit h2 sub{
+   color: #DEFF00;
+ }
+
+
+
+ .over3{
+   white-space: nowrap;
+   position: absolute;
+   top: 45%;
+      background-color: gray;
+      opacity: 0;
+
+transition: all ease 0.3s;
+ }
+
+ .dribble{
+   display: inline-block;
+   white-space: nowrap;
+animation-name: final;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+
+ .dribble h2{
+   display: inline-block;
+   white-space: nowrap;
+   font-size: 4vw;
+   font-family: neu;
+   margin-left: 25px;
+   font-weight: 500;
+
+ }
+
+ .dribble h2 sub{
+   color: #DEFF00;
+ }
+
+
+
+ .over4{
+   white-space: nowrap;
+   position: absolute;
+   top: 62%;
+      background-color:gray;
+      transition: all ease 0.3s;
+
+      opacity: 0;
+
+ }
+
+ .you{
+   display: inline-block;
+   white-space: nowrap;
+animation-name: final;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+
+ .you h2{
+   display: inline-block;
+   white-space: nowrap;
+   font-size: 4vw;
+   font-family: neu;
+   margin-left: 25px;
+   font-weight: 500;
+
+ }
+
+ .you h2 sub{
+   color: #DEFF00;
+   font-size: 3vw;
+ }
+
+
+ .over5{
+   white-space: nowrap;
+   position: absolute;
+   top: 79%;
+      background-color:gray;
+opacity: 0;
+
+transition: all ease 0.3s;
+
+
+ }
+
+ .link{
+   display: inline-block;
+   white-space: nowrap;
+animation-name: final;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+
+ .link h2{
+   display: inline-block;
+   white-space: nowrap;
+   font-size: 4vw;
+   font-family: neu;
+   margin-left: 25px;
+   font-weight: 500;
+ }
+
+ .link h2 sub{
+   color: #DEFF00;
+ }
+
+ #page9{
+   width: 100%;
+   height: 100vh;
+   background-color: black;
+   position: relative;
+margin-top: -3px;
+ }
+
+ #page9 video{
+   position: absolute;
+   top: 55%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   
+  height: 77vh;
+   object-fit: cover;
+ }
+
+ #last-pg9{
+   width: 600px;
+   height: 180px;
+   position: absolute;
+   top: 63%;
+   left: 53%;
+   transform: translate(-50%, -50%);
+z-index: 99999;
+/* background-color: lightpink; */
+color: white;
+ }
+
+ #last-pg9 h1{
+font-weight: 500;
+   font-size: 7vw;
+   font-family: neu;
+ }
+
+ #last-pg9 h5{
+font-weight: 500;
+   font-size: 1.5vw;
+   text-align: center;
+   font-family: neu;
+ }
+
+
+ #con{
+   width: 100%;
+   height: 70px;
+   /* background-color: red; */
+   position: absolute;
+   bottom: 0;
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-family: neu;
+ }
+
+ .con-l h5{
+   font-size: 16px;
+   color: gray;
+   font-weight: 500;
+
+ }
+
+ .con-l h4{
+   font-size: 18px;
+   color: white;
+   font-weight: 500;
+
+ }
+
+ .con-r h5{
+   font-size: 16px;
+   color: gray;
+   font-weight: 500;
+
+ }
+
+ .con-r h4{
+   font-size: 18px;
+   color: white;
+   font-weight: 500;
+
+ }
+
+ #con h3{
+   color: rgb(63, 61, 61);
+ }
