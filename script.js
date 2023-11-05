@@ -47,6 +47,99 @@ document.addEventListener("mousemove", function (dets) {
 })
 
 
+function mover(){
+  var tl = gsap.timeline()
+  tl.from("#mover .child",{
+    y:"120%",
+    duration:2,
+    skewY:4,
+    stagger:.5,
+    opacity:0,
+    onComplete:function(){
+   setTimeout(() => {
+            const counters = document.querySelectorAll('.value');
+            const speed = 300;
+            
+            counters.forEach( counter => {
+               const animate = () => {
+                  const value = +counter.getAttribute('akhi');
+                  const data = +counter.innerText;
+                 
+                  const time = value / speed;
+                 if(data < value) {
+                      counter.innerText = Math.ceil(data + time);
+                      setTimeout(animate, 1);
+                    }else{
+                      counter.innerText = value;
+                    }
+                 
+               }
+               
+               animate();
+            });
+           }, 1000);
+      
+       
+       
+    
+    
+   
+    }
+  })
+
+  tl.to("#mover",{
+    top:"-100%",
+    display:"none",
+    delay:2,
+    duration:2,
+    ease:Expo.ease,
+    onComplete:function(){
+      function pg1t(){
+      
+        var tl = gsap.timeline()
+        tl
+        .to(".cent .child",{
+          opacity:1,
+          y:"0%",
+          duration:2,
+          ease:Circ.ease,
+          skewY:0,
+          // skewY:5,
+          stagger:.5
+        })
+        }
+        pg1t()
+    }
+  })
+ 
+ 
+  
+
+}
+mover()
+
+
+
+function revealToSpan() {
+  document.querySelectorAll(".reveal").forEach(function(elem){
+      
+      let spanParent = document.createElement("span");
+      let spanChild = document.createElement("span");
+      
+      spanParent.classList.add("parent")
+      spanChild.classList.add("child")
+      
+      spanChild.innerHTML = elem.innerHTML;
+      // console.log(spanChild.textContent)
+      spanParent.appendChild(spanChild);
+      
+      elem.textContent = "";
+      elem.appendChild(spanParent);
+  })
+}
+revealToSpan()
+
+
 function menu() {
   var flag = 0
 
@@ -203,26 +296,13 @@ ver3();
 function pg1() {
 
   var tl = gsap.timeline();
-  tl.from("#center h1", {
-    y: 100,
-    opacity: 0,
-    duration: 1.1,
-
-  })
-
-
-    .from("#center h4", {
-      y: 100,
-      opacity: 0,
-      duration: 1.1,
-
-    })
-
-    .from(".nav-l", {
+  
+    tl.from(".nav-l", {
       y: -100,
       opacity: 0,
       stagger: 0.25,
-      duration: 0.8
+      duration: 0.8,
+      delay:5
     })
 
 
@@ -230,8 +310,27 @@ function pg1() {
       y: -100,
       opacity: 0,
       stagger: 0.25,
-      duration: 0.8
+      duration: 0.8,
+      // delay:2
     })
+
+    .from("#center h1", {
+      y: 100,
+      opacity: 0,
+      duration: 1.1,
+      // delay:2
+  
+    })
+  
+  
+      .from("#center h4", {
+        y: 100,
+        opacity: 0,
+        duration: 1.1,
+        // delay:
+  
+      })
+  
 }
 
 pg1();
@@ -543,4 +642,9 @@ last.addEventListener("mouseleave", function () {
   cur.style.backgroundColor = "white"
   cur.innerHTML = ""
 })
+
+
+
+
+
 
